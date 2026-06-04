@@ -9,7 +9,7 @@
           고객의 아이디어를 가장 현실적인 결과물로 만듭니다.
         </p>
         <router-link to="/portfolio"><span class="common-btn">포트폴리오 보기 ></span></router-link>
-        <router-link to="/estimate"><span class="common-btn">견적 문의하기 ></span></router-link>
+        <router-link to="/contact"><span class="common-btn">견적 문의하기 ></span></router-link>
       </div>
       <div class="home-top-banner-zone"></div>
     </div>
@@ -123,7 +123,7 @@
         <p class="our-service-subtitle">CONTACT</p>
         <h2 class="our-service-title">지금 아이디어를<br />현실로 만들어 보세요</h2>
         <p class="our-service-desc">체계적인 프로세스로<br />최상의 결과물을 제공합니다.</p>
-        <router-link to="/estimate">
+        <router-link to="/contact">
           <span class="common-btn common-margin-top-20">견적 문의하기 ></span>
         </router-link>
       </div>
@@ -306,7 +306,7 @@ const proList = ref([
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-top: 10px; /* 카드들과 시각적 높이를 맞추기 위한 여백 */
+  padding: 10px 0 0 24px;
 
   .our-service-num {
     font-size: 14px;
@@ -430,7 +430,7 @@ const proList = ref([
 .main-slider-track {
   display: flex;
   gap: 12px;
-  width: 766px;
+  width: 1008px;
   animation: desktop-scroll 20s linear infinite;
 }
 
@@ -465,7 +465,7 @@ const proList = ref([
   }
 }
 
-/* [반응형 기준: max-width 760px 이하 - 2개 1세트] */
+/* 반응형 기준 */
 @media (max-width: 760px) {
   .main-slider-container {
     width: 100%;

@@ -11,10 +11,10 @@
 
         <!-- 메뉴 영역 -->
         <nav class="nav-menu">
-          <div class="menu-item"><router-link to="/">HOME</router-link></div>
-          <div class="menu-item"><router-link to="/">PORTFOLIO</router-link></div>
-          <div class="menu-item"><router-link to="/">PROCESS</router-link></div>
-          <div class="menu-item"><router-link to="/">견적문의</router-link></div>
+          <!--<div class="menu-item"><router-link to="/">HOME</router-link></div>-->
+          <div class="menu-item"><router-link to="/portfolio">PORTFOLIO</router-link></div>
+          <div class="menu-item"><router-link to="/process">PROCESS</router-link></div>
+          <div class="menu-item"><router-link to="/contact">견적문의</router-link></div>
         </nav>
       </div>
     </header>
@@ -32,21 +32,19 @@ export default {
 .Header {
   width: 100%;
   box-sizing: border-box;
-  background-color: #f9f9fa;
+  background-color: #fff;
 }
 .header-container,
 .nav-menu {
   display: flex;
+  gap: 30px;
+  padding-right: 20px;
 }
 .header-container {
   justify-content: space-between;
   align-items: center;
   max-width: 1280px;
   margin: 0 auto;
-}
-.nav-menu {
-  gap: 30px;
-  padding-right: 20px;
 }
 .logo img {
   padding-left: 20px;
@@ -85,13 +83,17 @@ export default {
 }
 
 /* 마우스 오버 효과 통합 */
-.menu-item:hover {
+.menu-item:hover,
+.menu-item:has(.router-link-active) {
   transform: translateY(-4px);
 }
-.menu-item:hover a {
+
+.menu-item:hover a,
+.menu-item a.router-link-active {
   color: #01a081;
 }
-.menu-item:hover::after {
+.menu-item:hover::after,
+.menu-item:has(.router-link-active)::after {
   background-color: #01a081;
   transform: scaleX(1);
   transform-origin: bottom left;
@@ -107,6 +109,9 @@ export default {
   .logo img,
   .nav-menu {
     padding: 0;
+  }
+  .menu-item a {
+    font-size: 16px;
   }
 }
 </style>
